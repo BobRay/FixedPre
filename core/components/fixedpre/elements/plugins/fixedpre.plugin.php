@@ -1,0 +1,66 @@
+<?php
+/**
+ * FixedPre plugin
+ *
+ * *
+ * @author Bob Ray <http://bobsguides.com>
+ * @version Version 1.0.0 Beta-1
+ * 1/1/11
+ *
+ * FixedPre is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * FixedPre is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * FixedPre; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package fixedpre
+ */
+
+/**
+ * MODx FixedPre plugin
+ *
+ * Description: MODx tags inside <fixedpre> blocks will be displayed
+ * rather than executed.
+ *
+ * Events: OnParseDocument
+ *
+ * @package fixedpre
+ *
+ * @property
+ */
+
+/** plugin fixedpre  -- implements <fixedpre> tag
+ * MODx code inside <fixedpre></fixedpre> tags will be displayed
+ * rather than executed.
+ * @author Rahul Dhesi
+ * @author Bob Ray
+ * @package fixedpre
+ * Support: // http://rahul.rahul.net/modx-hints/fixedpre-tag.html
+ * 
+ */
+if (! function_exists('quote_meta') ) {
+    function quote_meta($a) {
+        $lhs = array("<", ">", "[", "]", "!", "{", "}", "`");
+        $rhs = array("&lt;", "&gt;", "&#091;", "&#093;", "&#033;", "&#123;", "&#125;", "&#96;");
+        $b = str_replace("&", "\255", $a[2]);  //save "&"
+
+        $lhs_preg = array('|<!(!*)fixedpre>|',  '|<!(!*)/fixedpre>|');
+        $rhs_preg = array('<$1fixedpre>',  '<$1/fixedpre>');
+        $b = preg_replace($lhs_preg, $rhs_preg, $b);
+        $b = str_replace($lhs, $rhs, $b);
+
+        /* restore '&' as '&amp;' and wrap in span tag */
+        return '<span class="fixedpre">' . str_replace("\255", "&amp;", $b) . '</span>';
+    }
+}
+
+$output =& $modx->resource->_output;
+$output = preg_replace_callback("#(<fixedpre>)(.*?)(</fixedpre>)#s",
+    "quote_meta", $output);
