@@ -28,8 +28,6 @@
  * @subpackage build
  */
 
-/* Example Resolver script */
-
 /* The $modx object is not available here. In its place we
  * use $object->xpdo
  */

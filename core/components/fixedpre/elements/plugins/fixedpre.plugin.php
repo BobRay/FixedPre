@@ -4,8 +4,8 @@
  *
  * *
  * @author Bob Ray <http://bobsguides.com>
- * @version Version 1.0.0 Beta-1
- * 1/1/11
+ * @version Version 1.0.1 beta-1
+ * 3/23/11
  *
  * FixedPre is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
@@ -47,20 +47,19 @@
  */
 if (! function_exists('quote_meta') ) {
     function quote_meta($a) {
-        $lhs = array("<", ">", "[", "]", "!", "{", "}", "`");
-        $rhs = array("&lt;", "&gt;", "&#091;", "&#093;", "&#033;", "&#123;", "&#125;", "&#96;");
+        $lhs = array("<", ">", "[", "]", "!", "{", "}", "`", "*", "~");
+        $rhs = array("&lt;", "&gt;", "&#091;", "&#093;", "&#033;", "&#123;", "&#125;", "&#96;", "&#42;", "&#126;");
         $b = str_replace("&", "\255", $a[2]);  //save "&"
-
         $lhs_preg = array('|<!(!*)fixedpre>|',  '|<!(!*)/fixedpre>|');
         $rhs_preg = array('<$1fixedpre>',  '<$1/fixedpre>');
         $b = preg_replace($lhs_preg, $rhs_preg, $b);
         $b = str_replace($lhs, $rhs, $b);
 
         /* restore '&' as '&amp;' and wrap in span tag */
-        return '<span class="fixedpre">' . str_replace("\255", "&amp;", $b) . '</span>';
+        return '<span class="fxp">' . str_replace("\255", "&amp;", $b) . '</span>';
     }
 }
 
-$output =& $modx->resource->_output;
+$output =& $modx->documentOutput;
 $output = preg_replace_callback("#(<fixedpre>)(.*?)(</fixedpre>)#s",
     "quote_meta", $output);

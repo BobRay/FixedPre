@@ -1,5 +1,10 @@
 Changelog for FixedPre
 
+FixedPre 1.0.1
+--------------
+ - Fixed serious bug preventing use with content tags
+ - Changed span class from fixedpre to fxp
+
 FixedPre 1.0.0
 -------------------
-Initial Version
+ - Initial Version

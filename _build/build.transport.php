@@ -30,27 +30,12 @@
 
 /* See the fixedpre/core/docs/tutorial.html file for
  * more detailed information about using the package
- *
- * Search and replace tasks:
- * (edit the resource and element names first if they have
- * different names than your package.)
- *
- * FixedPre -> Name of your package
- * fixedpre -> lowercase name of your package
- * Your Name -> Your Actual Name
- * Your Site -> Name of your site
- * yoursite -> domain name of your site
- * you@yourdomain.com -> your email address
- * Description -> Description of file or component
- *
- * 1/1/11 -> Current date
- * 2011 -> Current Year
  */
 
-/* Set package info be sure to set all of these */
+/* Set package info */
 define('PKG_NAME','FixedPre');
 define('PKG_NAME_LOWER','fixedpre');
-define('PKG_VERSION','1.0.0');
+define('PKG_VERSION','1.0.1');
 define('PKG_RELEASE','beta1');
 define('PKG_CATEGORY','FixedPre');
 
