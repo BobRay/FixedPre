@@ -44,38 +44,13 @@ define('PKG_CATEGORY','FixedPre');
  * */
 $hasAssets = false; /* Transfer the files in the assets dir. */
 $hasCore = true;   /* Transfer the files in the core dir. */
-$hasSnippets = false;
-$hasChunks = false;
-$hasTemplates = false;
-$hasResources = false;
-$hasValidator = false; /* Run a validator before installing anything */
 $hasResolver = true; /* Run a resolver after installing everything */
 $hasSetupOptions = false; /* HTML/PHP script to interact with user */
-$hasMenu = false; /* Add items to the MODx Top Menu */
-$hasSettings = false; /* Add new MODx System Settings */
 
-/* Note: TVs are connected to their templates in the script resolver
- * (see _build/data/resolvers/install.script.php)
- */
-$hasTemplateVariables = false;
-$hasTemplates = false;
 /* Note: plugin events are connected to their plugins in the script
  * resolver (see _build/data/resolvers/install.script.php)
  */
 $hasPlugins = true;
-
-$hasPropertySets = false;
-/* Note: property sets are connected to elements in the script
- * resolver (see _build/data/resolvers/install.script.php)
- */
-$hasSubPackages = false; /* add in other component packages (transport.zip files)*/
-/* Note: The package files will be copied to core/packages but will
- * have to be installed manually with "Add New Package" and "Search
- * Locally for Packages" in Package Manager. Be aware that the
- * copied packages may be older versions than ones already
- * installed. This is necessary because Package Manager's
- * autoinstall of the packages is unreliable at this point. 
- */
 
 /******************************************
  * Work begins here
@@ -97,11 +72,8 @@ $sources= array (
     'source_core' => $root.'core/components/'.PKG_NAME_LOWER,
     'source_assets' => $root.'assets/components/'.PKG_NAME_LOWER,
     'resolvers' => $root . '_build/resolvers/',
-    'validators'=> $root . '_build/validators/',
     'data' => $root . '_build/data/',
     'docs' => $root . 'core/components/fixedpre/docs/',
-    'install_options' => $root . '_build/install.options/',
-    'packages'=> $root . 'core/packages',
 );
 unset($root);
 
@@ -147,17 +119,6 @@ $attr = array(xPDOTransport::UNIQUE_KEY => 'category',
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::RELATED_OBJECTS => true,
 );
-
-
-
-if ($hasPropertySets) {
-    $attr[xPDOTransport::RELATED_OBJECT_ATTRIBUTES]['PropertySets'] = array(
-            xPDOTransport::PRESERVE_KEYS => false,
-            xPDOTransport::UPDATE_OBJECT => true,
-            xPDOTransport::UNIQUE_KEY => 'name',
-        );
-}
-
 
 if ($hasPlugins) {
     $attr[xPDOTransport::RELATED_OBJECT_ATTRIBUTES]['Plugins'] = array(
