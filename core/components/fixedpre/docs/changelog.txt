@@ -1,5 +1,10 @@
 Changelog for FixedPre
 
+FixedPre 1.0.2
+--------------
+No longer inserts span tags
+Plays nice with SyntaxHighlighter
+
 FixedPre 1.0.1
 --------------
  - Fixed serious bug preventing use with content tags
