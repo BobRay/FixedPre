@@ -35,8 +35,8 @@
 /* Set package info */
 define('PKG_NAME','FixedPre');
 define('PKG_NAME_LOWER','fixedpre');
-define('PKG_VERSION','1.0.1');
-define('PKG_RELEASE','beta1');
+define('PKG_VERSION','1.0.2');
+define('PKG_RELEASE','pl');
 define('PKG_CATEGORY','FixedPre');
 
 /* Set package options - you can turn these on one-by-one

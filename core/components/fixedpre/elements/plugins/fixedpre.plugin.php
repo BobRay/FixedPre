@@ -56,7 +56,8 @@ if (! function_exists('quote_meta') ) {
         $b = str_replace($lhs, $rhs, $b);
 
         /* restore '&' as '&amp;' and wrap in span tag */
-        return '<span class="fxp">' . str_replace("\255", "&amp;", $b) . '</span>';
+        //return '<span class="fxp">' . str_replace("\255", "&amp;", $b) . '</span>';
+        return str_replace("\255", "&amp;", $b);
     }
 }
 
