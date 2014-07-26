@@ -1,5 +1,9 @@
 Changelog for FixedPre
 
+FixedPre 1.2.0
+--------------
+Update for MODX 2.3
+
 FixedPre 1.0.2
 --------------
 No longer inserts span tags

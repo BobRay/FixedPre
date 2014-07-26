@@ -32,10 +32,16 @@
  * more detailed information about using the package
  */
 
+/* unused -- here to prevent E_NOTICE errors */
+define('MODX_BASE_URL', 'http://localhost/addons/');
+define('MODX_MANAGER_URL', 'http://localhost/addons/manager/');
+define('MODX_ASSETS_URL', 'http://localhost/addons/assets/');
+define('MODX_CONNECTORS_URL', 'http://localhost/addons/connectors/');
+
 /* Set package info */
 define('PKG_NAME','FixedPre');
 define('PKG_NAME_LOWER','fixedpre');
-define('PKG_VERSION','1.0.2');
+define('PKG_VERSION','1.2.0');
 define('PKG_RELEASE','pl');
 define('PKG_CATEGORY','FixedPre');
 
