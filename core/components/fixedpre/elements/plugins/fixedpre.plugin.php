@@ -4,7 +4,7 @@
  *
  * *
  * @author Bob Ray <http://bobsguides.com>
- * @version Version 1.0.1 beta-1
+ * Copyright 2011-2014 Bob Ray
  * 3/23/11
  *
  * FixedPre is free software; you can redistribute it and/or modify it
@@ -60,8 +60,8 @@ if (! function_exists('quote_meta') ) {
         return str_replace("\255", "&amp;", $b);
     }
 }
-
-$output =& $modx->documentOutput;
+/** @var $modx modX */
+$output =& $modx->resource->_output;
 $output = preg_replace_callback("#(<fixedpre>)(.*?)(</fixedpre>)#s",
     "quote_meta", $output);
 
