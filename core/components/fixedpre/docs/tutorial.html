@@ -1,20 +1,24 @@
 <p>
-This plugin is for use with MODx Revolution. FixedPre can be used to display MODx tags and PHP code in a MODx document. Simply wrap the tags or code in &lt;fixedpre&gt;&lt;/fixedpre&gt; tags. FixedPre is a Revolution version of Rahul Dhesi's plugin for MODx Evolution.
+This plugin is for use with MODx Revolution. FixedPre can be used to display MODx tags and PHP code in a MODx document. Simply wrap the tags or code in <fixedpre><fixedpre></fixedpre> tags. FixedPre is a Revolution version of Rahul Dhesi's plugin for MODx Evolution.
 </p>
 <h3>Installing FixedPre for MODx Revolution</h3>
 <p>
 Go to System | Package Management on the main menu in the MODx Manager and click on the "Download Extras" button. That will take you to the Revolution Repository (AKA Web Transport Facility). Put FixedPre in the search box and press Enter. Click on the "Download" button, and when it changes to "Downloaded," click on the "Finish" button. That should bring you back to your Package Management grid. Right click on FixedPre and select "Install Package." The FixedPre plugin should now be installed.</p>
 
 <h3>Styling FixedPre Sections</h3>
-<p>On the rendered web page, the &lt;fixedpre&gt;&lt;/fixedpre&gt; tags will be removed. Note that as of version 1.0.2, they are no longer replaced with &lt;span class=&quot;fixedpre&quot;&gt;&lt;/span&gt; tags in order to make FixedPre play nice with SyntaxHighlighter.<p>
+<p>On the rendered web page, the <fixedpre><fixedpre></fixedpre> tags will be removed. Note that as of version 1.0.2, they are no longer replaced with <fixedpre><span class="fxp"</span></fixedpre> tags in order to make FixedPre play nice with SyntaxHighlighter.<p>
 
-<p>If you depended on the span tags, you can add them back outside the fixedpre tags:</p>
+<p>If you depended on the span tags to format code and tags inside a regular paragraph (in other words, not in a <fixedpre><pre></fixedpre> section), you can add them back outside the fixedpre tags:</p>
 
 <pre class="brush: xml">
-    &lt;span class="fxp"&gt;&lt;fixedpre>Something&lt;/fixedpre&gt;&lt;/span&gt;
+&lt;span class="fxp"&gt;&lt;fixedpre>Something&lt;/fixedpre&gt;&lt;/span&gt;
 </pre>
 
-<p>If you are presenting PHP or HTML/XML code, you can put the &lt;fixedpre&gt;&lt;/fixedpre&gt; tags inside &lt;pre&gt;&lt;/pre&gt; tags. Important: If you're using SyntaxHighlighter the &lt;fixedpre&gt; tags <b>must</b> be inside the &lt;pre&gt; tags.</p>
+<p>For conversion on a live site, you can make the change above before updating FixedPre. You'll have nested span tags until you update FixedPre, but it shouldn't affect the display.</p>
+
+<p>If you are presenting PHP or HTML/XML code, you can put the <fixedpre><fixedpre></fixedpre> tags inside <fixedpre><pre></pre></fixedpre> tags.</p>
+
+<p><b>Important</b>: If you're using SyntaxHighlighter, the <fixedpre><fixedpre></fixedpre> tags <b>must</b> be inside the <fixedpre><pre></fixedpre> tags.</p>
 
 <p>&nbsp;</p>
 
