@@ -64,3 +64,5 @@ if (! function_exists('quote_meta') ) {
 $output =& $modx->documentOutput;
 $output = preg_replace_callback("#(<fixedpre>)(.*?)(</fixedpre>)#s",
     "quote_meta", $output);
+
+return '';
