@@ -1,5 +1,10 @@
 Changelog for FixedPre
 
+FixedPre 1.2.2
+--------------
+Fix bug with $documentOutput
+
+
 FixedPre 1.2.0
 --------------
 Update for MODX 2.3

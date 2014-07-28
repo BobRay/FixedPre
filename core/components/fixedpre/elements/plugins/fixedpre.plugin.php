@@ -61,7 +61,7 @@ if (! function_exists('quote_meta') ) {
     }
 }
 /** @var $modx modX */
-$output =& $modx->resource->_output;
+$output =& $modx->documentOutput;
 $output = preg_replace_callback("#(<fixedpre>)(.*?)(</fixedpre>)#s",
     "quote_meta", $output);
 
