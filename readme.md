@@ -1,7 +1,7 @@
 FixedPre Plugin for MODx Revolution
 =======================================
 
-**Author:** Rahul Dhesi  
+**Author:** Rahul Dhesi <http://rahul.rahul.net/modx-hints/fixedpre-tag.html> [Fixedpre tag] 
 **Author:** Bob Ray <http://bobsguides.com> [Bob's Guides](http://bobsguides.com)
 
 Documentation is available at [Bob's Guides](http://bobsguides.com/fixedpre-tutorial.html)
