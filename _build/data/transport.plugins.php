@@ -1,7 +1,7 @@
 <?php
 /**
  * FixedPre transport plugins
-  * @author Bob Ray <http://bobsguides.com>
+  * @author Bob Ray <https://bobsguides.com>
  * 2/10/11
  *
  * FixedPre is free software; you can redistribute it and/or modify it

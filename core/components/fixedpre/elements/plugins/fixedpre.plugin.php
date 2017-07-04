@@ -3,8 +3,8 @@
  * FixedPre plugin
  *
  * *
- * @author Bob Ray <http://bobsguides.com>
- * Copyright 2011-2014 Bob Ray
+ * @author Bob Ray <https://bobsguides.com>
+ * Copyright 2011-2017 Bob Ray
  * 3/23/11
  *
  * FixedPre is free software; you can redistribute it and/or modify it
@@ -24,9 +24,9 @@
  */
 
 /**
- * MODx FixedPre plugin
+ * MODX FixedPre plugin
  *
- * Description: MODx tags inside <fixedpre> blocks will be displayed
+ * Description: MODX tags inside <fixedpre> blocks will be displayed
  * rather than executed.
  *
  * Events: OnParseDocument
@@ -37,7 +37,7 @@
  */
 
 /** plugin fixedpre  -- implements <fixedpre> tag
- * MODx code inside <fixedpre></fixedpre> tags will be displayed
+ * MODX code inside <fixedpre></fixedpre> tags will be displayed
  * rather than executed.
  * @author Rahul Dhesi
  * @author Bob Ray

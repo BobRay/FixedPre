@@ -4,7 +4,7 @@
  * FixedPre resolver script - runs on install.
  *
  * @author Rahul Dhesi
- * @author Bob Ray <http://bobsguides.com>
+ * @author Bob Ray <https://bobsguides.com>
  * 1/1/11
  *
  * FixedPre is free software; you can redistribute it and/or modify it
