@@ -2,7 +2,7 @@
 /**
  * FixedPre Build Script
  *
- * Copyright 2011-2017 BobRay <https://bobsguides.com>
+ * Copyright 2011-2017 Bob Ray <https://bobsguides.com>
  *
  * FixedPre is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
