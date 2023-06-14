@@ -42,7 +42,8 @@
  * @author Rahul Dhesi
  * @author Bob Ray
  * @package fixedpre
- * Support: // http://rahul.rahul.net/modx-hints/fixedpre-tag.html
+ * Bugs and feature requests: https://github.com/BobRay/FixedPre/issues
+ * Support: https://community.modx.com
  * 
  */
 if (! function_exists('quote_meta') ) {

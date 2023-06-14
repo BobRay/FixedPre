@@ -32,8 +32,18 @@
  * use $object->xpdo
  */
 
-$modx =& $object->xpdo;
+ /* @var modTransportPackage $transport */
 
+ if ($transport) {
+     $modx =& $transport->xpdo;
+ } else {
+     $modx =& $object->xpdo;
+ }
+
+ /* Make it run in either MODX 2 or MODX 3 */
+ $prefix = $modx->getVersionData()['version'] >= 3
+   ? 'MODX\Revolution\\'
+   : '';
 
 /* Connecting plugins to the appropriate system events  is done here.
  *
@@ -55,21 +65,22 @@ $hasPlugins = true;
 $success = true;
 
 $modx->log(xPDO::LOG_LEVEL_INFO,'Running PHP Resolver.');
+/** @var $options array */
 switch($options[xPDOTransport::PACKAGE_ACTION]) {
     /* This code will execute during an install */
     case xPDOTransport::ACTION_INSTALL:
         /* Assign plugins to System events */
         if ($hasPlugins) {
             foreach($plugins as $k => $plugin) {
-                $pluginObj = $modx->getObject('modPlugin',array('name'=>$plugin));
+                $pluginObj = $modx->getObject($prefix . 'modPlugin',array('name'=>$plugin));
                 if (! $pluginObj) $modx->log(xPDO::LOG_LEVEL_INFO,'cannot get object: ' . $plugin);
                 if (empty($pluginEvents)) $modx->log(xPDO::LOG_LEVEL_INFO,'Cannot get System Events');
                 if (!empty ($pluginEvents) && $pluginObj) {
 
                     $modx->log(xPDO::LOG_LEVEL_INFO,'Assigning Events to Plugin ' . $plugin);
 
-                    foreach($pluginEvents as $k => $event) {
-                        $intersect = $modx->newObject('modPluginEvent');
+                    foreach($pluginEvents as $l => $event) {
+                        $intersect = $modx->newObject($prefix . 'modPluginEvent');
                         $intersect->set('event',$event);
                         $intersect->set('pluginid',$pluginObj->get('id'));
                         $intersect->save();
