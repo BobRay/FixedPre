@@ -25,8 +25,10 @@
  * @subpackage build
  */
 
+/** @var $modx modX */
+/** @var $sources array */
 if (! function_exists('getPluginContent')) {
-    function getpluginContent($filename) {
+    function getPluginContent($filename) {
         $o = file_get_contents($filename);
         $o = str_replace('<?php','',$o);
         $o = str_replace('?>','',$o);
