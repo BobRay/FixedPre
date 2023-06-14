@@ -1,9 +1,12 @@
 Changelog for FixedPre
 
+FixedPre 1.2.3
+--------------
+Mods for MODX 3
+
 FixedPre 1.2.2
 --------------
 Fix bug with $documentOutput
-
 
 FixedPre 1.2.0
 --------------
