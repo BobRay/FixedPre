@@ -41,9 +41,11 @@ define('MODX_CONNECTORS_URL', 'http://localhost/addons/connectors/');
 /* Set package info */
 define('PKG_NAME','FixedPre');
 define('PKG_NAME_LOWER','fixedpre');
-define('PKG_VERSION','1.2.2');
+define('PKG_VERSION','1.2.3');
 define('PKG_RELEASE','pl');
 define('PKG_CATEGORY','FixedPre');
+
+/** @var $modx modX */
 
 /* Set package options - you can turn these on one-by-one
  * as you create the transport package
